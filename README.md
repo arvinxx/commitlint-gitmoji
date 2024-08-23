@@ -31,6 +31,62 @@
 
 English(TODO) | [中文](https://www.yuque.com/arvinxx-fe/workflow/gitmoji-commit-workflow)
 
+# Introduction
+
+## Overview
+
+Gitmoji Commit Workflow is a tool designed to streamline and standardize the commit process using Gitmoji. It aims to provide a consistent and visually appealing way to manage commits, making it easier to understand the purpose of each commit at a glance.
+
+## Key Features
+
+- **Standardized Commit Messages**: Enforces a consistent commit message format using Gitmoji.
+- **Shareable Configurations**: Provides shareable configurations for commitlint, conventional-changelog, and semantic-release.
+- **Helper Packages**: Includes helper packages for parser options, commit types, and Gitmoji regex.
+
+## Installation and Setup
+
+To install and set up Gitmoji Commit Workflow, follow these steps:
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/arvinxx/gitmoji-commit-workflow.git
+   cd gitmoji-commit-workflow
+   ```
+
+2. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+
+3. Configure your project to use the provided packages and configurations.
+
+## Basic Usage
+
+Here are some basic usage examples to get you started:
+
+- **Commitlint Configuration**:
+  ```sh
+  echo "module.exports = {extends: ['gitmoji']};" > commitlint.config.js
+  ```
+
+- **Conventional Changelog Configuration**:
+  ```js
+  // .releaserc.js
+  module.exports = {
+    extends: ['semantic-release-config-gitmoji'],
+  };
+  ```
+
+- **Semantic Release Configuration**:
+  ```js
+  // .releaserc.js
+  const { createConfig } = require('semantic-release-config-gitmoji/lib/createConfig');
+
+  const config = createConfig({ monorepo: true });
+
+  module.exports = config;
+  ```
+
 ## Template
 
 Refer to this repository to get a [template](https://github.com/arvinxx/gitmoji-commit-workflow-template) of Gitmoji Commit Workflow
